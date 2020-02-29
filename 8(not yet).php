@@ -3,18 +3,22 @@
 
 $array = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
+
+/*
 foreach ($array as $value) {
-    /* for ($value; $value <= 9; $value++) {
-         echo $value .'-';
+    for ($value; $value <= 9; $value++) {
+        echo $value . '-';
+        break;
+    }
+}
 
-     } */
-
-
+*/
+/*
     $value = 0;
     while ($value <= 9) {
         $value++;
         echo $value . '-';
-    }
-
 }
+
+*/
 

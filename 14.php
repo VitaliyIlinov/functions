@@ -10,5 +10,4 @@ foreach ($array as $key => $value) {
     } else {
         echo "Нет";
     }
-
 }

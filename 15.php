@@ -6,6 +6,5 @@ $count = 0;
 
 foreach ($array as $value) {
     $count++;
-
 }
 echo $count;

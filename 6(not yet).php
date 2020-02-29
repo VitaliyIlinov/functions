@@ -5,7 +5,8 @@ $arr = array('green' => 'зеленый', 'red' => 'красный', 'blue' => '
 
 
 foreach ($arr as $key => $value) {
-    $en[] = $value;
-    //echo $en ."<br>";
-
+    $en[] = $key;
+    $ru[] = $value;
 }
+var_dump($en);
+var_dump($ru);
