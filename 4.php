@@ -26,7 +26,7 @@ function get_country($id, $countries)
             return $country_id;
         }
     }
-    //return "Такой страны не существует";
+    return "Такой страны не существует";
 }
 
 var_dump(get_country(1, $countries));
