@@ -1,5 +1,5 @@
 <?php
-//get_city(id)` - Получение города по его ID.
+//  get_cities_country(country_id)` - Получение списка всех городов,
 
 $cities = [
     [
@@ -16,14 +16,14 @@ $cities = [
     ]
 ];
 
-function get_city($cities, $id)
+function get_cities_id($cities)
+
 {
+    $all_cities = [];
     for ($i = 0; $i < count($cities); $i++) {
-        $city_id = $cities[$i];
-        if ($city_id['id'] == $id) {
-            return $city_id;
-        }
+        $all_cities[] = $cities[$i]['name'];
     }
+    return $all_cities;
 }
 
-var_dump(get_city($cities, 2));
+var_dump(get_cities_id($cities));

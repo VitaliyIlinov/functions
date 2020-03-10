@@ -1,5 +1,5 @@
 <?php
-// 10. get_user_full_name(id)` - Получение полного имени пользователя по его ID.
+//get_users_car(car_id) - По ID машины вывести всех пользователей, которые приобрели данную машину
 
 $users = [
     [
@@ -38,12 +38,39 @@ $users = [
     ],
 ];
 
-function get_user_full_name($users, $id) {
+$users_cars = [
+    [
+        // ID записи: <пользователь-машина>
+        'id' => 1,
+        'user_id' => 2,
+        'car_id' => 1
+    ],
+    [
+        'id' => 2,
+        'user_id' => 3,
+        'car_id' => 1
+    ],
+    [
+        'id' => 3,
+        'user_id' => 3,
+        'car_id' => 2
+    ],
+    // И да, у феминистки 2 машины - это не ошибка
+];
 
-    for ($i = 0; $i < count($users); $i++) {
-        if ($users[$i]['id'] == $id) {
-            return $users[$i]['last_name']. ' ' .$users[$i]['first_name']. ' ' .$users[$i]['second_name'];
+function get_users_cars($users, $users_cars, $id_car)
+{
+    $name_list = [];
+    for ($i = 0; $i < count($users_cars); $i++) {
+        $car_id = $users_cars[$i]['car_id'];
+        if ($car_id == $id_car) {
+            for ($j = 0; $j < count($users); $j++) {
+                if ($users[$j]['id'] == $users_cars[$i]['user_id']) {
+                    $name_list[] = $users[$j]['first_name'] . $users[$j]['last_name'];
+                }
+            }
         }
-    }
+    } return $name_list;
 }
-echo get_user_full_name($users, 2);
+
+print_r(get_users_cars($users, $users_cars, 1));

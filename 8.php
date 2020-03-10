@@ -1,5 +1,5 @@
 <?php
-// 10. get_user_full_name(id)` - Получение полного имени пользователя по его ID.
+// 8. get_user(id)` - Получение пользователя по его ID. Если ID пользователя не найден,то выдаем ошибку, что пользователь не найден по такому-то ID.
 
 $users = [
     [
@@ -38,12 +38,16 @@ $users = [
     ],
 ];
 
-function get_user_full_name($users, $id) {
-
+function get_user($users, $id) {
     for ($i = 0; $i < count($users); $i++) {
-        if ($users[$i]['id'] == $id) {
-            return $users[$i]['last_name']. ' ' .$users[$i]['first_name']. ' ' .$users[$i]['second_name'];
+        $user_id = $users[$i];
+        if ($user_id['id'] == $id) {
+            return $user_id;
+            break;
         }
+
     }
+    echo 'User with ID: ' . $id . ' not found.';
 }
-echo get_user_full_name($users, 2);
+
+print_r(get_user($users, 3));
